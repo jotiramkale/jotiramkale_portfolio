@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0d13;
+    background-image: radial-gradient(
+        60rem 40rem at 85% -10%,
+        rgba(139, 92, 246, 0.1),
+        transparent 60%
+      ),
+      radial-gradient(50rem 34rem at 5% 10%, rgba(34, 211, 184, 0.09), transparent 55%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  ::selection {
+    background-color: rgba(34, 211, 184, 0.3);
+    color: #eef1f8;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0d13;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1b1f2a;
+    border-radius: 999px;
+    border: 2px solid #0a0d13;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #262b39;
+  }
+
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid #22d3b8;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
+  }
+
+  .glass-panel {
+    @apply relative rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-xl shadow-panel;
+  }
+
+  .gradient-text {
+    @apply bg-signal-gradient bg-clip-text text-transparent;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 focus-visible:outline-signal-500;
+  }
+
+  .btn-primary {
+    @apply btn bg-signal-gradient text-ink-950 shadow-glow hover:shadow-[0_12px_32px_-10px_rgba(34,211,184,0.4)] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply btn border border-white/15 bg-white/[0.02] text-slate-100 hover:border-signal-400/50 hover:bg-white/[0.05] hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-300 hover:text-signal-400;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-slate-200 transition-colors duration-200;
+  }
+
+  .grid-overlay {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 30%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 30%, #000 30%, transparent 75%);
+  }
+
+  .eyebrow {
+    @apply text-sm font-medium text-signal-400;
+  }
+}
