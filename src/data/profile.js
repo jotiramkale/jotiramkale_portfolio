@@ -8,7 +8,7 @@ export const profile = {
   title: 'Generative AI & Agentic AI Developer',
   location: 'Maharashtra, India',
   // Hero supporting line — keep this accurate to what you've actually built.
-  tagline: 'I build practical AI-powered applications using LLMs, RAG, multi-agent systems, and Python.',
+  tagline: 'I build practical AI-powered applications using LLMs, RAG, multi-agent systems, and Python. ',
   availability: 'Open to opportunities',
   about: {
     paragraphs: [
