@@ -5,7 +5,7 @@ export const profile = {
   name: 'Jotiram Kale',
   initials: 'JK',
   // Shown directly under the name in the Hero section.
-  title: 'Generative AI & LLM Developer',
+  title: 'Generative AI & Agentic AI Developer',
   location: 'Maharashtra, India',
   // Hero supporting line — keep this accurate to what you've actually built.
   tagline: 'I build practical AI-powered applications using LLMs, RAG, multi-agent systems, and Python.',
