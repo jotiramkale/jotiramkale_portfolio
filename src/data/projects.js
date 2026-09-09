@@ -4,6 +4,38 @@
 
 export const projects = [
   {
+    id: 'smart-invoice-ai',
+    title: 'SmartInvoice AI',
+    description:
+      'An AI-powered invoice processing application that extracts structured data from PDF and image invoices and generates downloadable Excel reports.',
+    problem:
+      'Manually entering invoice details from unstructured PDFs and images is repetitive, time-consuming, and prone to missed fields or calculation errors.',
+    solution:
+      'A Flask application that combines PaddleOCR text extraction with Groq LLM analysis to turn uploaded invoices into structured JSON and Excel-ready reports.',
+    keyFeatures: [
+      'Upload PDF or image invoices through a simple web interface',
+      'OCR-based text extraction for unstructured invoice documents',
+      'AI-powered parsing of invoice numbers, vendors, customers, taxes, totals, and line items',
+      'Automatic JSON data extraction for structured results',
+      'Downloadable Excel reports generated with Pandas and OpenPyXL',
+    ],
+    architecture: [
+      'PDF or image invoice upload',
+      'PaddleOCR text extraction',
+      'Groq LLM invoice analysis',
+      'Structured JSON output',
+      'Pandas data preparation',
+      'OpenPyXL Excel report',
+    ],
+    tech: ['Python', 'Flask', 'Groq API', 'PaddleOCR', 'Pandas', 'OpenPyXL', 'HTML/CSS'],
+    status: 'Completed',
+    icon: 'filePdf',
+    accent: 'signal',
+    featured: false,
+    githubUrl: '',
+    liveUrl: 'https://smart-invoice-ai-bmf1.onrender.com/',
+  },
+  {
     id: 'laptop-price-predictor',
     title: 'Laptop Price Predictor',
     description:
