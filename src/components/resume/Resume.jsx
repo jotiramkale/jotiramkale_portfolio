@@ -4,6 +4,7 @@ import Icon from '../common/Icon'
 import ResumePreview from './ResumePreview'
 
 const contents = ['Education & certifications', 'Skills & tech stack', 'Project experience', 'Contact details']
+const resumeUrl = '/resume.pdf?v=20260930'
 
 export default function Resume() {
   return (
@@ -26,11 +27,11 @@ export default function Resume() {
           </ul>
 
           <div className="flex flex-wrap items-center gap-3">
-            <a href="/resume.pdf" download className="btn-primary">
+            <a href={resumeUrl} download className="btn-primary">
               <Icon name="download" className="h-3.5 w-3.5" />
               Download resume
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href={resumeUrl} target="_blank" rel="noreferrer" className="btn-secondary">
               <Icon name="eye" className="h-3.5 w-3.5" />
               View resume
             </a>

@@ -10,10 +10,9 @@ assets (photo, resume, resume preview, favicon, OG image) live in
   placeholder automatically if the file is missing.
 - **Resume** — `public/resume.pdf`, the real PDF behind every
   View/Download button.
-- **Resume preview** — `public/resume-preview.jpg`, a rendered snapshot
-  of the resume's first page, shown by
-  `src/components/resume/ResumePreview.jsx`. Falls back to a generic
-  mock card if missing.
+- **Resume preview** — `public/resume.pdf`, embedded directly by
+  `src/components/resume/ResumePreview.jsx` so it always matches the
+  document behind the View and Download actions.
 - **Project thumbnails** — `src/components/projects/ProjectThumbnail.jsx`
   (gradient panel + icon per project, no image files needed).
 - **Icons** — `src/utils/iconMap.js` (react-icons, centralized).

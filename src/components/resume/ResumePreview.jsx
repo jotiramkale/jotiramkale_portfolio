@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { profile } from '../../data/profile'
 
+const resumeUrl = '/resume.pdf?v=20260930'
+
 const lineWidths = ['w-3/4', 'w-full', 'w-5/6', 'w-2/3', 'w-full', 'w-1/2']
 
 function FallbackMock() {
@@ -36,12 +38,8 @@ function FallbackMock() {
 }
 
 /**
- * Shows an actual rendered snapshot of the real resume.pdf when available
- * (public/resume-preview.jpg). Falls back to a generic skeleton mock if
- * that thumbnail is missing, so the section never breaks or looks fake.
- *
- * If you replace public/resume.pdf, regenerate the thumbnail so this stays
- * in sync — see README.md for the one-line command.
+ * Embeds the actual resume PDF so the preview always stays in sync with the
+ * document used by the View and Download actions.
  */
 export default function ResumePreview() {
   const [imageFailed, setImageFailed] = useState(false)
@@ -56,11 +54,10 @@ export default function ResumePreview() {
       className="glass-panel mx-auto w-full max-w-sm overflow-hidden"
     >
       {!imageFailed ? (
-        <img
-          src="/resume-preview.jpg"
-          alt={`Preview of ${profile.name}'s resume`}
-          className="w-full object-cover"
-          loading="lazy"
+        <iframe
+          src={`${resumeUrl}#page=1&view=FitH`}
+          title={`Preview of ${profile.name}'s resume`}
+          className="h-[32rem] w-full bg-white"
           onError={() => setImageFailed(true)}
         />
       ) : (

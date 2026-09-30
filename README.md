@@ -81,8 +81,7 @@ public/
   og-image.png        Open Graph / social share image (1200x630)
   profile.jpg         Your real photo — shown in the Hero (see below)
   resume.pdf          Your real resume — powers all view/download buttons
-  resume-preview.jpg  Rendered snapshot of resume.pdf's first page, used
-                       as the resume preview image (see below)
+  resume-preview.jpg  Legacy preview image (no longer used)
 ```
 
 ## Customizing the content
@@ -120,18 +119,9 @@ placeholder automatically instead of showing a broken image.
 section). To update it later, just replace that file — the download
 links always point to `/resume.pdf`, so nothing else needs to change.
 
-The Resume section also shows an actual image preview of your resume's
-first page (`public/resume-preview.jpg`), not a fake mockup. If you
-replace `resume.pdf`, regenerate that preview so it stays in sync:
-
-```bash
-pdftoppm -jpeg -r 200 -f 1 -l 1 public/resume.pdf /tmp/resume-page
-# then resize/rename the output to public/resume-preview.jpg
-```
-
-(`pdftoppm` ships with poppler-utils.) If you skip this step, the old
-preview image just stays slightly stale — nothing breaks. If the preview
-image is missing entirely, the section falls back to a generic mock card.
+The Resume section and Hero modal embed `public/resume.pdf` directly, so
+the on-page preview always matches the document behind the View and
+Download actions.
 
 ### Social links
 

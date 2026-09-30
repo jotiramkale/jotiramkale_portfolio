@@ -1,5 +1,7 @@
 import Icon from '../common/Icon'
 
+const resumeUrl = '/resume.pdf?v=20260930'
+
 /**
  * Compact, secondary resume card shown near the Hero — deliberately smaller
  * and quieter than the profile photo. The full Resume section further down
@@ -17,7 +19,7 @@ export default function ResumeMiniCard() {
       </div>
       <div className="flex shrink-0 items-center gap-1.5">
         <a
-          href="/resume.pdf"
+          href={resumeUrl}
           target="_blank"
           rel="noreferrer"
           aria-label="View resume"
@@ -27,7 +29,7 @@ export default function ResumeMiniCard() {
           <Icon name="eye" className="h-3.5 w-3.5" />
         </a>
         <a
-          href="/resume.pdf"
+          href={resumeUrl}
           download
           aria-label="Download resume"
           title="Download resume"

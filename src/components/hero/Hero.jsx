@@ -15,6 +15,8 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
 }
 
+const resumeUrl = '/resume.pdf?v=20260930'
+
 export default function Hero() {
   const [showResume, setShowResume] = useState(false)
   const shouldReduceMotion = useReducedMotion()
@@ -138,10 +140,10 @@ export default function Hero() {
               >
                 <Icon name="close" className="h-4 w-4" />
               </button>
-              <img
-                src="/resume-preview.jpg"
-                alt={`Enlarged preview of ${profile.name}'s resume`}
-                className="max-h-[88vh] w-auto max-w-full rounded-xl object-contain shadow-panel"
+              <iframe
+                src={`${resumeUrl}#view=FitH`}
+                title={`${profile.name}'s resume`}
+                className="h-[88vh] w-[min(90vw,900px)] rounded-xl bg-white shadow-panel"
               />
             </motion.div>
           </motion.div>
